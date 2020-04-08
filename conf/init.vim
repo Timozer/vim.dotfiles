@@ -1,0 +1,2 @@
+
+echom "reading init.vim"

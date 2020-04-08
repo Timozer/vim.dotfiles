@@ -1,0 +1,126 @@
+{
+	"suggest.snippetIndicator": "⭐︎",
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.timeout": 300,
+    "suggest.noselect": true,
+    "suggest.minTriggerInputLength": 2,
+    "suggest.acceptSuggestionOnCommitCharacter": true,
+    "suggest.floatEnable": true,
+    "coc.source.json.enable": true,
+    "coc.source.json.shortcut": "Json",
+    "coc.source.dictionary.enable": true,
+    "coc.source.dictionary.shortcut": "Dict",
+    "coc.source.word.enable": false,
+    "coc.source.word.shortcut": "Word",
+    "coc.source.gocode.enable": false,
+    "coc.source.gocode.shortcut": "Golang",
+    "coc.source.vimtex.enable": true,
+    "coc.source.vimtex.shortcut": "Vimtex",
+    "snippets.ultisnips.directories": [
+        "./plugged/timozerSnips/myownsnips",
+        "./plugged/timozerSnips/UltiSnips"
+    ],
+    "snippets.usePythonx": false,
+    "snippets.ultisnips.pythonVersion": 3,
+    "languageserver": {
+        "clangd": {
+            "command": "clangd",
+            "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["c", "cpp", "objc", "objcpp"]
+        }
+    },
+    "languageserver": {
+        "golang": {
+            "command": "go-langserver",
+            "filetypes": ["go"],
+            "initializationOptions": {
+                "gocodeCompletionEnabled": true,
+                "diagnosticsEnabled": true,
+                "lintTool": "golint"
+            }
+        }
+    },
+    "languageserver": {
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        }
+    },
+    "languageserver": {
+        "python": {
+            "command": "python",
+            "args": [
+                "-mpyls",
+                "-vv",
+                "--log-file",
+                "/tmp/lsp_python.log"
+            ],
+            "trace.server": "verbose",
+            "filetypes": [
+                "python"
+            ],
+            "settings": {
+                "pyls": {
+                    "enable": true,
+                    "trace": {
+                        "server": "verbose"
+                    },
+                    "commandPath": "",
+                    "configurationSources": [
+                        "pycodestyle"
+                    ],
+                    "plugins": {
+                        "jedi_completion": {
+                            "enabled": true
+                        },
+                        "jedi_hover": {
+                            "enabled": true
+                        },
+                        "jedi_references": {
+                            "enabled": true
+                        },
+                        "jedi_signature_help": {
+                            "enabled": true
+                        },
+                        "jedi_symbols": {
+                            "enabled": true,
+                            "all_scopes": true
+                        },
+                        "mccabe": {
+                            "enabled": true,
+                            "threshold": 15
+                        },
+                        "preload": {
+                            "enabled": true
+                        },
+                        "pycodestyle": {
+                            "enabled": true
+                        },
+                        "pydocstyle": {
+                            "enabled": false,
+                            "match": "(?!test_).*\\.py",
+                            "matchDir": "[^\\.].*"
+                        },
+                        "pyflakes": {
+                            "enabled": true
+                        },
+                        "rope_completion": {
+                            "enabled": true
+                        },
+                        "yapf": {
+                            "enabled": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "languageserver": {
+        "digestif": {
+            "command": "digestif",
+            "filetypes": ["tex", "plaintex", "context"]
+        }
+    }
+}

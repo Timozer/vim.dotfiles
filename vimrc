@@ -1,23 +1,137 @@
-if lib#common#IsWindows()
-    let g:xvim_home=expand('~/vimfiles')
-else
-    let g:xvim_home=expand('~/.vim')
-endif
+let g:xvim_home = fnamemodify(expand('<sfile>'), ':h')
+lockvar g:xvim_home
 
-let &rtp=substitute(&rtp, '^', g:xvim_home.",", 'g')
+let g:xvim_version = '0.0.1-dev'
+lockvar g:xvim_version
 
-let g:conf_files = [
-            \ 'basic.vim',
-            \ 'autocmd.vim',
-            \ 'keymap.vim',
-            \ 'tags.vim',
-            \ 'plugins.vim',
-            \]
+" editing settings
+let g:xvim_indent = 4
+let g:xvim_expand_tab = 1
 
-for s:conf_file in g:conf_files
-    let s:conf_path = g:xvim_home . '/conf/' . s:conf_file
-    if filereadable(s:conf_path)
-        exec ':so ' s:conf_path
-    endif
-endfor
+" mouse settings
+let g:xvim_enable_mouse = 1
+let g:xvim_mousehide = 1
 
+let g:xvim_max_column = 80
+let g:xvim_enable_guicolors = 0
+let g:xvim_sidebar_width = 30
+let g:xvim_enable_cursorline = 1
+let g:xvim_enable_cursorcolumn = 0
+let g:xvim_statusline_separator = 'nil'
+let g:xvim_error_symbol            = '✖'
+let g:xvim_warning_symbol          = '⚠'
+let g:xvim_help_language = 'cn'
+let g:xvim_colorscheme = ''
+let g:xvim_colorscheme_bg = 'dark'
+let g:xvim_filetree_direction = 'left'
+let g:xvim_sidebar_direction = ''
+let g:xvim_log_level = 3
+
+let g:xvim_data_dir = g:xvim_home . "/.data"
+
+let g:xvim_plugins_dir = g:xvim_home . "/.plugins"
+
+let g:xvim_plugins = {
+        \ "gruvbox": {
+            \ "repo": "morhetz/gruvbox",
+            \ "enable": 1,
+            \ },
+        \ "vimcdoc": {
+            \ "repo": "yianwillis/vimcdoc",
+            \ "enable": 1,
+            \ },
+        \ "vim-startify" : {
+            \ "repo": "mhinz/vim-startify",
+            \ "enable": 1,
+            \ },
+        \ "vim-airline": {
+            \ "repo": "vim-airline/vim-airline",
+            \ "enable": 1,
+            \ },
+        \ "vim-airline-themes": {
+            \ "repo": "vim-airline/vim-airline-themes",
+            \ "enable": 1,
+            \ },
+        \ "defx": {
+            \ "repo": 'Shougo/defx.nvim',
+            \ "enable": 1,
+            \ },
+        \ "nvim-yarp": {
+            \ "repo": 'roxma/nvim-yarp',
+            \ "enable": 1,
+            \ },
+        \ "vim-hug-neovim-rpc": {
+            \ "repo": 'roxma/vim-hug-neovim-rpc',
+            \ "enable": 1,
+            \ },
+        \ "nerdcommenter": {
+            \ "repo": "scrooloose/nerdcommenter",
+            \ "enable": 1,
+            \ "before": 1,
+            \ },
+        \ "indentLine": {
+            \ "repo": "Yggdroot/indentLine",
+            \ "enable": 1,
+            \ },
+        \ "coc": {
+            \ "repo": "neoclide/coc.nvim",
+            \ "enable": 1,
+            \ "options": {"merged": 0, "rev": "release"},
+            \ },
+        \ "ultisnips": {
+            \ "repo": "SirVer/ultisnips",
+            \ "enable": 1,
+            \ },
+        \ "vim-visual-multi": {
+            \ "repo": "mg979/vim-visual-multi",
+            \ "enable": 1,
+            \ },
+        \ "auto-pairs": {
+            \ "repo": "jiangmiao/auto-pairs",
+            \ "enable": 1,
+            \ },
+        \ "vim-surround": {
+            \ "repo": "tpope/vim-surround",
+            \ "enable": 1,
+            \ },
+        \ "vim-easy-align": {
+            \ "repo": "junegunn/vim-easy-align",
+            \ "enable": 1,
+            \ },
+        \ "LeaderF": {
+            \ "repo": "Yggdroot/LeaderF",
+            \ "enable": 1,
+            \ "options": {"build": "./install.sh"},
+            \ },
+        \ "gen_tags": {
+            \ "repo": "jsfaint/gen_tags.vim",
+            \ "enable": 1,
+            \ },
+        \ "vista": {
+            \ "repo": "liuchengxu/vista.vim",
+            \ "enable": 1,
+            \ },
+    \ }
+
+"" tag 
+"Plug 'farmergreg/vim-lastplace'
+
+"Plug 'dyng/ctrlsf.vim'
+"Plug 'w0rp/ale'
+
+"Plug 'derekwyatt/vim-fswitch'
+"Plug 'derekwyatt/vim-protodef'
+
+"Plug 'vim-scripts/ag.vim'
+"Plug 'sjl/gundo.vim'
+
+"Plug 'plasticboy/vim-markdown'
+
+""Plug 'octol/vim-cpp-enhanced-highlight'
+
+"Plug 'pseewald/vim-anyfold'
+
+"Plug 'Timozer/timozerSnips'
+"Plug 'Timozer/addfileheader'
+call xvim#begin()
+call xvim#end()

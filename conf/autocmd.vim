@@ -4,6 +4,7 @@ au BufWinEnter *.inc set filetype=asm
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
 augroup TexFileType
+    au!
     au BufWinEnter *.tex,*.cls,*.sty set filetype=tex
     au BufNewFile,BufRead *.tex,*.cls,*.sty set filetype=tex
     au BufNewFile,BufRead *.tex set spell

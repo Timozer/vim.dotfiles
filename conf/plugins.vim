@@ -4,6 +4,9 @@
 call plug#begin(g:xvim_home.'/plugged')
 Plug 'yianwillis/vimcdoc'
 
+" welcome page
+Plug 'mhinz/vim-startify'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
