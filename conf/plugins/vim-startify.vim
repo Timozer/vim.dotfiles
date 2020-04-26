@@ -1,20 +1,15 @@
-let g:startify_session_dir = g:xvim_data_dir . '/session'
-if finddir(g:startify_session_dir) ==# ''
-    silent call mkdir(g:startify_session_dir, 'p', 0700)
-endif
-
 let g:startify_custom_header = [
     \ '',
     \ '',
-    \ '       /$$   /$$ /$$    /$$ /$$',
-    \ '      | $$  / $$| $$   | $$|__/',
-    \ '      |  $$/ $$/| $$   | $$ /$$ /$$$$$$/$$$$',
-    \ '       \  $$$$/ |  $$ / $$/| $$| $$_  $$_  $$',
-    \ '        >$$  $$  \  $$ $$/ | $$| $$ \ $$ \ $$',
-    \ '       /$$/\  $$  \  $$$/  | $$| $$ | $$ | $$',
-    \ '      | $$  \ $$   \  $/   | $$| $$ | $$ | $$',
-    \ '      |__/  |__/    \_/    |__/|__/ |__/ |__/',
-    \ '               version: ' . g:xvim_version,
+    \ '    /$$   /$$ /$$    /$$ /$$',
+    \ '   | $$  / $$| $$   | $$|__/',
+    \ '   |  $$/ $$/| $$   | $$ /$$ /$$$$$$/$$$$',
+    \ '    \  $$$$/ |  $$ / $$/| $$| $$_  $$_  $$',
+    \ '     >$$  $$  \  $$ $$/ | $$| $$ \ $$ \ $$',
+    \ '    /$$/\  $$  \  $$$/  | $$| $$ | $$ | $$',
+    \ '   | $$  \ $$   \  $/   | $$| $$ | $$ | $$',
+    \ '   |__/  |__/    \_/    |__/|__/ |__/ |__/',
+    \ '            version: ' . g:xvim_version,
     \ '',
 \ ]
 
@@ -28,6 +23,10 @@ let g:startify_lists = [
 \ ]
 
 let g:startify_update_oldfiles = 1
+let g:startify_session_dir = g:xvim_data_dir . '/session'
+if finddir(g:startify_session_dir) ==# ''
+    silent call mkdir(g:startify_session_dir, 'p', 0700)
+endif
 let g:startify_session_autoload = 1
 let g:startify_session_persistence = 1
 let g:startify_change_to_dir = 0

@@ -123,3 +123,5 @@ endif
 set undofile
 set undolevels=1000
 exec "set undodir=" . g:xvim_data_dir . "/undofile"
+
+set tags=./.tags;,.tags

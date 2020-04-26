@@ -107,16 +107,29 @@ let g:xvim_plugins = {
             \ "repo": "jsfaint/gen_tags.vim",
             \ "enable": 1,
             \ },
-        \ "vista": {
-            \ "repo": "liuchengxu/vista.vim",
+        \ "vim-signify": {
+            \ "repo": "mhinz/vim-signify",
+            \ "enable": 1,
+            \ "options": {"rev": "legacy"},
+            \ },
+        \ "vim-projectionist": {
+            \ "repo": "tpope/vim-projectionist",
+            \ "enable": 1,
+            \ },
+        \ "ctrlsf": {
+            \ "repo": "dyng/ctrlsf.vim",
             \ "enable": 1,
             \ },
     \ }
 
+"Plug 'kana/vim-textobj-user'
+"Plug 'kana/vim-textobj-indent'
+"Plug 'kana/vim-textobj-syntax'
+"Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
+"Plug 'sgur/vim-textobj-parameter'
 "" tag 
 "Plug 'farmergreg/vim-lastplace'
 
-"Plug 'dyng/ctrlsf.vim'
 "Plug 'w0rp/ale'
 
 "Plug 'derekwyatt/vim-fswitch'

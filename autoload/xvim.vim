@@ -17,6 +17,7 @@ function! xvim#begin() abort
     " options
     call xvim#util#load_config('default/basic.vim')
     " autocmd
+    call xvim#util#load_config('autocmd.vim')
     " keymap
     call xvim#util#load_config('keymap.vim')
     " plugins
