@@ -39,11 +39,17 @@ endfunction
 function! xvim#welcome() abort
     exec 'cd' fnameescape(g:_xvim_cwd)
     if exists(':Startify') == 2
-        echom "exist startify"
-        Startify
         if isdirectory(bufname(1))
             bwipeout! 1
         endif
+        let g:startify_lists = [
+            \ { 'type': 'dir',       'header': ['   MRU '. g:_xvim_cwd] },
+            \ { 'type': 'files',     'header': ['   MRU']            },
+            \ { 'type': 'sessions',  'header': ['   Sessions']       },
+            "\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+            "\ { 'type': 'commands',  'header': ['   Commands']       },
+        \ ]
+        Startify
     endif
     if exists(':Defx') == 2
         Defx

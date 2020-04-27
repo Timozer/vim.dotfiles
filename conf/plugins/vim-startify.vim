@@ -14,13 +14,6 @@ let g:startify_custom_header = [
 \ ]
 
 let g:startify_files_number = 5
-let g:startify_lists = [
-    \ { 'type': 'files',     'header': ['   MRU']            },
-    \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-    \ { 'type': 'sessions',  'header': ['   Sessions']       },
-    "\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-    "\ { 'type': 'commands',  'header': ['   Commands']       },
-\ ]
 
 let g:startify_update_oldfiles = 1
 let g:startify_session_dir = g:xvim_data_dir . '/session'

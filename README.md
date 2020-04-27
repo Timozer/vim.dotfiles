@@ -8,6 +8,13 @@
 |  $$$$$$$| $$  \ $$ |  $$$$/| $$      |  $$$$$$$| $$ | $$ | $$|  $$$$$$$         \  $/   | $$| $$ | $$ | $$
  \_______/|__/  |__/  \___/  |__/       \_______/|__/ |__/ |__/ \_______/          \_/    |__/|__/ |__/ |__/
 ```
+# TODO
+
+## BUGS
+- defx 文件浏览器里打开文件时莫名卡死
+
+## vim-startify
+- sessions 相关
 
 # 关于 eXtreme Vim(XVim)
 
@@ -79,6 +86,12 @@ sudo make install
 
 # 特性
 
+本配置使用 [dein](https://github.com/Shougo/dein.vim) 作为插件管理器。
+
+## 欢迎界面
+![welcome](./imgs/welcome.png)
+
+
 ## Keymap
 
 这个配置里的 Leader Key 设置为分号，即 `let mapleader=";"`。
@@ -138,14 +151,3 @@ let g:multi_cursor_skip_key='<C-x>'
 ```vim
 noremap <Leader>ud :GundoToggle<CR>
 ```
-# Install
-
-```sh
-git clone https://github.com/Timozer/tcvim.git ~/.vim
-```
-# Update Logs
-
-2019-06-14 21:53
-
-上个项目的迁移, 使用了 coc.nvim 作为补全插件
-
