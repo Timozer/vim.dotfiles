@@ -86,7 +86,7 @@ function! s:defx_init()
 
     nnoremap <silent><buffer><expr> <C-h>
                 \ defx#do_action('toggle_ignored_files')
-    nnoremap <silent><buffer><expr> <C-r>
+    nnoremap <silent><buffer><expr> <C-R>
                 \ defx#do_action('redraw')
     nnoremap <silent><buffer><expr> <C-g>
                 \ defx#do_action('print')
