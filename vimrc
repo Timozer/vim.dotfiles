@@ -132,7 +132,6 @@ let g:xvim_plugins = {
 
 "Plug 'w0rp/ale'
 
-"Plug 'derekwyatt/vim-fswitch'
 "Plug 'derekwyatt/vim-protodef'
 
 "Plug 'vim-scripts/ag.vim'

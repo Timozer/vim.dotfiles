@@ -129,7 +129,7 @@ sudo make install
 - `<` 减少当前窗口的宽度
 
 
-
+在头文件和源文件之间切换: `<leader>sh`
 
 ## Keymap
 

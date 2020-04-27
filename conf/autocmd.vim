@@ -11,18 +11,14 @@ augroup TexFileType
 augroup END
 
 au FileType c,cpp exec "set tags+=" . g:xvim_home . "/qt5.tags"
-
-function! RestoreCursor()
-    if line("'\"") <= line("$")
-        silent! normal! g`"
-        return 1
-    endif
+au FileType c,cpp set path+=** | nmap <leader>sh :call SwitchSourceHeader()<CR>
+function! SwitchSourceHeader()
+  if (expand ("%:e") == "cpp")
+    find %:t:r.h
+  else
+    find %:t:r.cpp
+  endif
 endfunction
-
-augroup restoreCursor
-    autocmd!
-    autocmd BufWinEnter * call RestoreCursor()
-augroup END
 
 let g:xvim_lastplace_ignore_filetype = "gitcommit,gitrebase,svn,hgcommit"
 let g:xvim_lastplace_ignore_buftype = "quickfix,nofile,help"
