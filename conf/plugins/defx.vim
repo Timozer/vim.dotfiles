@@ -65,7 +65,7 @@ function! s:defx_init()
                 \ defx#do_action('remove')
     nnoremap <silent><buffer><expr> <BS>
                 \ defx#do_action('remove')
-    nnoremap <silent><buffer><expr> <C-r>
+    nnoremap <silent><buffer><expr> r
                 \ defx#do_action('rename')
     nnoremap <silent><buffer><expr> yy defx#do_action('call', 'DefxYarkPath')
 
@@ -86,7 +86,7 @@ function! s:defx_init()
 
     nnoremap <silent><buffer><expr> <C-h>
                 \ defx#do_action('toggle_ignored_files')
-    nnoremap <silent><buffer><expr> <C-R>
+    nnoremap <silent><buffer><expr> <C-S-R>
                 \ defx#do_action('redraw')
     nnoremap <silent><buffer><expr> <C-g>
                 \ defx#do_action('print')
