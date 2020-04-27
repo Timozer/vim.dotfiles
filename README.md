@@ -9,13 +9,35 @@
  \_______/|__/  |__/  \___/  |__/       \_______/|__/ |__/ |__/ \_______/          \_/    |__/|__/ |__/ |__/
 ```
 
-# eXtreme Vim(XVim)
+# 关于 eXtreme Vim(XVim)
 
-这是我的 Vim 配置, 代码具体参考了哪个项目的, 我忘记了, 在此表示感谢.
+eXtreme Vim 简称 XVim，以下使用 XVim 代替 eXtreme Vim，是我个人的 Vim 配置。
+它通过一些插件来使 Vim 提供一个类 IDE 的编辑特性。
 
-# Vim Install
+XVim 受到了 [SpaceVim](https://github.com/SpaceVim/SpaceVim) 的启发，但是其核心
+思想和实现方式不同。
 
-## Mac
+XVim 的核心思想是: 
+
+- **记忆辅助，肌肉记忆为主**，所有快捷键，都需要用户自己记住，以肌肉记忆为主，
+若是无法记起某个功能，则需要记忆 TODO:
+- 可视化交互
+- **唯我主义**，我不要你觉得，我要我觉得。XVim 里的所有特性都是以我个人喜好
+  来决定的。
+- **极简主义**，尽可能不增加复杂性，代码都通俗易懂。
+
+XVim 的实现方式和 [SpaceVim](https://github.com/SpaceVim/SpaceVim) 有所不同，
+SpaceVim 加入了层(layer)的概念，而 XVim 没有新增任何概念，使用的都是 Vim 固有的
+概念，不会增加复杂性，方便用户微调。
+
+# 需求
+
+- Vim 版本 802 以上，因为有的插件要使用浮动窗口; 
+- +python3，因为有的插件使用 python 开发的，python2 我没有测试，不知道能不能用; 
+
+# 源码编译安装 Vim
+
+## Mac(or Linux) -> Linux 没有测试，不知道行不行，如果有测试过的小伙伴，可以告诉我
 ```sh
 git clone https://github.com/vim/vim.git
 cd vim
@@ -55,7 +77,7 @@ sudo make install
 
 安装到 `/usr/local/bin/` 下。
 
-# Features
+# 特性
 
 ## Keymap
 
