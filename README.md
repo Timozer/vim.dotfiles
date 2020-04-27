@@ -136,11 +136,9 @@ sudo make install
 这个配置里的 Leader Key 设置为分号，即 `let mapleader=","`。
 
 快捷保存与退出：
-```vim
-nmap <Leader>q :q<CR>
-nmap <Leader>w :w!<CR>
-nmap <Leader>Q :qa<CR>
-```
+- `<leader>q` 退出当前窗口
+- `<leader>w` 保存当前窗口
+- `<leader>W` 退出所有窗口
 
 分割窗口后在窗口之间的跳转：
 ```vim
@@ -165,28 +163,9 @@ imap <Leader>id <ESC><Leader>idkJA
 
 # Plugins
 
-## vim-fswitch
-
-```vim
-" switch between .cpp and .h file
-nnoremap <silent> <Leader>sw :FSHere<cr>
-```
-
 ## ctrlsf
 ```vim
 " plugin: ctrlsf.vim
 let g:ctrlsf_case_sensitive = 'smart'
 nnoremap <Leader>sf :CtrlSF<CR>
-```
-
-## multicursors
-```vim
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-```
-## gundo
-
-```vim
-noremap <Leader>ud :GundoToggle<CR>
 ```

@@ -26,10 +26,13 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 "nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
-"nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <S-F6> <Plug>(coc-rename)
+nmap <silent> <leader>ca <Plug>(coc-codeaction)
+nmap <silent> <leader>fe <Plug>(coc-fix-current)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>

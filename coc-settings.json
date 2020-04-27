@@ -6,6 +6,7 @@
     "suggest.minTriggerInputLength": 2,
     "suggest.acceptSuggestionOnCommitCharacter": true,
     "suggest.floatEnable": true,
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "coc.source.json.enable": true,
     "coc.source.json.shortcut": "Json",
     "coc.source.dictionary.enable": true,
@@ -26,10 +27,9 @@
         "clangd": {
             "command": "clangd",
             "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["c", "cpp", "objc", "objcpp"]
-        }
-    },
-    "languageserver": {
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "trace.server": "verbose"
+        },
         "golang": {
             "command": "go-langserver",
             "filetypes": ["go"],
@@ -38,17 +38,13 @@
                 "diagnosticsEnabled": true,
                 "lintTool": "golint"
             }
-        }
-    },
-    "languageserver": {
+        },
         "bash": {
             "command": "bash-language-server",
             "args": ["start"],
             "filetypes": ["sh"],
             "ignoredRootPaths": ["~"]
-        }
-    },
-    "languageserver": {
+        },
         "python": {
             "command": "python",
             "args": [
@@ -115,9 +111,7 @@
                     }
                 }
             }
-        }
-    },
-    "languageserver": {
+        },
         "digestif": {
             "command": "digestif",
             "filetypes": ["tex", "plaintex", "context"]
