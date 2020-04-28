@@ -11,7 +11,7 @@
 # TODO
 
 ## BUGS
-- defx 文件浏览器里打开文件时莫名卡死
+- defx 文件浏览器里打开文件时莫名卡死 **Done**
 
 ## vim-startify
 - sessions 相关
