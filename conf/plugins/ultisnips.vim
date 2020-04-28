@@ -1,7 +1,6 @@
 " plugin: ultisnips
 let g:UltiSnipsSnippetDirectories=[
-    \ g:xvim_home."/plugged/timozerSnips/myownsnips",
-    \ g:xvim_home."/plugged/timozerSnips/UltiSnips",
+    \ g:xvim_home."/.plugins/repos/github.com/Timozer/timozerSnips",
     \ ]
 let g:UltiSnipsExpandTrigger="<Leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"

@@ -107,17 +107,16 @@ let g:xvim_plugins = {
             \ "repo": "jsfaint/gen_tags.vim",
             \ "enable": 1,
             \ },
-        \ "vim-signify": {
-            \ "repo": "mhinz/vim-signify",
-            \ "enable": 1,
-            \ "options": {"rev": "legacy"},
-            \ },
         \ "vim-projectionist": {
             \ "repo": "tpope/vim-projectionist",
             \ "enable": 1,
             \ },
         \ "ctrlsf": {
             \ "repo": "dyng/ctrlsf.vim",
+            \ "enable": 1,
+            \ },
+        \ "timozerSnips": {
+            \ "repo": "Timozer/timozerSnips",
             \ "enable": 1,
             \ },
     \ }
@@ -128,7 +127,6 @@ let g:xvim_plugins = {
 "Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
 "Plug 'sgur/vim-textobj-parameter'
 "" tag 
-"Plug 'farmergreg/vim-lastplace'
 
 "Plug 'w0rp/ale'
 
@@ -143,7 +141,6 @@ let g:xvim_plugins = {
 
 "Plug 'pseewald/vim-anyfold'
 
-"Plug 'Timozer/timozerSnips'
 "Plug 'Timozer/addfileheader'
 call xvim#begin()
 call xvim#end()
