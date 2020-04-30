@@ -31,8 +31,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <S-F6> <Plug>(coc-rename)
-nmap <silent> <leader>ca <Plug>(coc-codeaction)
-nmap <silent> <leader>fe <Plug>(coc-fix-current)
+nmap <silent> <S-CR> <Plug>(coc-fix-current)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
