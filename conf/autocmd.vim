@@ -10,68 +10,90 @@ augroup TexFileType
     au BufNewFile,BufRead *.tex set spell
 augroup END
 
-au FileType c,cpp exec "set tags+=" . g:xvim_home . "/qt5.tags"
 au FileType c,cpp set path+=** | nmap <leader>sh :call SwitchSourceHeader()<CR>
 function! SwitchSourceHeader()
-  if (expand ("%:e") == "cpp")
-    find %:t:r.h
-  else
-    find %:t:r.cpp
-  endif
+    if (expand ("%:e") == "cpp")
+        find %:t:r.h
+    else
+        find %:t:r.cpp
+    endif
 endfunction
 
-let g:xvim_lastplace_ignore_filetype = "gitcommit,gitrebase,svn,hgcommit"
-let g:xvim_lastplace_ignore_buftype = "quickfix,nofile,help"
+let g:xvim_view_ignore_filetype = "gitcommit,gitrebase,svn,hgcommit"
+let g:xvim_view_ignore_buftype = "quickfix,nofile,help"
 
-function! s:lastplace()
-    if index(split(g:xvim_lastplace_ignore_buftype, ","), &buftype) != -1 
-        return
+function! s:ViewCheck()
+    if index(split(g:xvim_view_ignore_buftype, ","), &buftype) != -1 
+        return 1
     endif
 
-    if index(split(g:xvim_lastplace_ignore_filetype, ","), &filetype) != -1
+    if index(split(g:xvim_view_ignore_filetype, ","), &filetype) != -1
+        return 1
+    endif
+endfunction
+
+function! s:ViewSave()
+    if s:ViewCheck() == 1
         return
     endif
+    mkview!
+endfunction
 
-    try
-        "if the file does not exist on disk (a new, unsaved file) then do nothing
-        if empty(glob(@%))
-            return
-        endif
-    catch
+function! s:ViewLoad()
+    if s:ViewCheck() == 1
         return
-    endtry
+    endif
+    loadview
+endfunction
 
-    if line("'\"") > 0 && line("'\"") <= line("$")
-        "if the last edit position is set and is less than the
-        "number of lines in this buffer.
+autocmd BufWritePost,BufLeave,WinLeave ?* call s:ViewSave()
+autocmd BufWinEnter ?* call s:ViewLoad()
 
-        if line("w$") == line("$")
-            "if the last line in the current buffer is
-            "also the last line visible in this window
-            execute "normal! g`\""
 
-        elseif line("$") - line("'\"") > ((line("w$") - line("w0")) / 2) - 1
-            "if we're not at the bottom of the file, center the
-            "cursor on the screen after we make the jump
-            execute "normal! g`\"zz"
-
+function! MakeOrUpdateSession(automake)
+    let b:sessiondir = g:xvim_sessions_dir . getcwd()
+    let b:sessionfile = b:sessiondir . "/session.vim"
+    if (filereadable(b:sessionfile))
+        echom "Updating session..."
+        exe "mksession! " . b:sessionfile
+    else
+        echom "Makeing session..."
+        let l:allowmake = 0
+        if (a:automake == 0)
+            for l:dir in g:xvim_sessions_root
+                echom g:_xvim_cwd . "/" . l:dir
+                sleep 5
+                if (filewritable(expand(g:_xvim_cwd . "/" . l:dir)) == 2)
+                    echom g:_xvim_cwd . "/" . l:dir . " exists"
+                    let l:allowmake = 1
+                    break
+                endif
+            endfor
         else
-            "otherwise, show as much context as we can by jumping
-            "to the end of the file and then to the mark. If we
-            "pressed zz here, there would be blank lines at the
-            "bottom of the screen. We intentionally leave the
-            "last line blank by pressing <c-e> so the user has a
-            "clue that they are near the end of the file.
-            execute "normal! \G'\"\<c-e>"
+            let l:allowmake = 1
+        endif
+        if l:allowmake == 1
+            echom "make session"
+            if (filewritable(b:sessiondir) != 2)
+                exe 'silent !mkdir -p ' b:sessiondir
+                redraw!
+            endif
+            exe 'mksession! ' . b:sessionfile
         endif
     endif
-    "if foldclosed(".") != -1 && g:lastplace_open_folds
-        ""if we're in a fold, make the current line visible and recenter screen
-        "execute "normal! zvzz"
-    "endif
 endfunction
 
-augroup LastPlace
-    autocmd!
-    autocmd BufWinEnter * call s:lastplace()
-augroup END
+" Loads a session if it exists
+function! LoadSession()
+    if g:xvim_sessions_autoload == 1
+        let b:sessiondir = g:xvim_sessions_dir . getcwd()
+        let b:sessionfile = b:sessiondir . "/session.vim"
+        if (filereadable(b:sessionfile))
+            exe 'source ' b:sessionfile
+        endif
+    endif
+endfunction
+
+"au VimEnter * nested :call LoadSession()
+"au VimLeave * :call MakeOrUpdateSession(0)
+"map <F1> :call MakeOrUpdateSession(1)<CR>

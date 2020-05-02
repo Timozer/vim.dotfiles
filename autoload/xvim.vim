@@ -5,10 +5,12 @@ function! xvim#begin() abort
     let s:status = xvim#util#parse_args()
     if s:status[0] == 0 || s:status[0] == 1 " current working directory
         let g:_xvim_cwd = fnamemodify(s:status[1], ':~')
+        "if !(g:xvim_sessions_autoload == 1 && filereadable(g:xvim_sessions_dir . expand(g:_xvim_cwd) . "/session.vim")) 
         augroup xvim_welcome
             au!
             autocmd VimEnter * call xvim#welcome()
         augroup END
+        "endif
     "elseif s:status[0] == 1 " directory 
     else " file 
         call xvim#logger#info("startup arguments: " . string(s:status[1]))

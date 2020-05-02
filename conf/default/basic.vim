@@ -124,4 +124,9 @@ set undofile
 set undolevels=1000
 exec "set undodir=" . g:xvim_data_dir . "/undofile"
 
+exec "set viewdir=" . g:xvim_data_dir . "/view"
+set viewoptions-=options
+
+set sessionoptions-=options
+
 set tags=./.tags;,.tags

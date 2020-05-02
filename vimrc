@@ -31,6 +31,10 @@ let g:xvim_data_dir = g:xvim_home . "/.data"
 
 let g:xvim_plugins_dir = g:xvim_home . "/.plugins"
 
+let g:xvim_sessions_root = ['.git', '.idea']
+let g:xvim_sessions_autoload = 1
+let g:xvim_sessions_dir = g:xvim_data_dir . "/session"
+
 let g:xvim_plugins = {
         \ "gruvbox": {
             \ "repo": "morhetz/gruvbox",
@@ -126,18 +130,11 @@ let g:xvim_plugins = {
 "Plug 'kana/vim-textobj-syntax'
 "Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
 "Plug 'sgur/vim-textobj-parameter'
-"" tag 
-
-"Plug 'w0rp/ale'
-
-"Plug 'derekwyatt/vim-protodef'
 
 "Plug 'vim-scripts/ag.vim'
 "Plug 'sjl/gundo.vim'
 
 "Plug 'plasticboy/vim-markdown'
-
-""Plug 'octol/vim-cpp-enhanced-highlight'
 
 "Plug 'pseewald/vim-anyfold'
 
