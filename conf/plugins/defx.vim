@@ -47,6 +47,10 @@ function! s:defx_init()
                 \ defx#do_action('new_directory')
     nnoremap <silent><buffer><expr> <C-n>f
                 \ defx#do_action('new_file')
+    nnoremap <silent><buffer><expr> <leader>nd
+                \ defx#do_action('new_directory')
+    nnoremap <silent><buffer><expr> <leader>nf
+                \ defx#do_action('new_file')
 
     nnoremap <silent><buffer><expr> '
                 \ defx#do_action('toggle_select') . 'j'
