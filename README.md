@@ -169,3 +169,19 @@ imap <Leader>id <ESC><Leader>idkJA
 let g:ctrlsf_case_sensitive = 'smart'
 nnoremap <Leader>sf :CtrlSF<CR>
 ```
+
+# Language Servers
+
+## bash
+
+```
+npm i -g bash-language-server
+```
+
+## lua
+
+```
+brew install lua luarocks
+luarocks install --server=http://luarocks.org/dev lua-lsp
+luarocks install luacheck
+```
