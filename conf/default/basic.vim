@@ -1,5 +1,6 @@
 " General
 set nocompatible 
+set background=dark
 
 "if !lib#common#IsWindows()
     "set shell=/bin/sh
