@@ -2,6 +2,7 @@
 " auto commands
 au BufWinEnter *.inc set filetype=asm
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+au FileType go set noexpandtab
 
 augroup TexFileType
     au!
