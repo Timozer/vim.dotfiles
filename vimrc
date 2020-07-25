@@ -84,7 +84,7 @@ let g:xvim_plugins = {
             \ },
         \ "ultisnips": {
             \ "repo": "SirVer/ultisnips",
-            \ "enable": 1,
+            \ "enable": 0,
             \ },
         \ "vim-visual-multi": {
             \ "repo": "mg979/vim-visual-multi",
