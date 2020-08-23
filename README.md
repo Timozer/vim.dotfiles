@@ -84,6 +84,21 @@ sudo make install
 
 安装到 `/usr/local/bin/` 下。
 
+install on debian: 
+- install ncurses:
+```bash
+sudo apt-get install libncurses5-dev libncursesw5-dev
+```
+- install python3 lib
+```bash
+sudo apt install python3-distutils python3.7-dev
+```
+
+install req for defx:
+```bash
+pip3 install pynvim
+```
+
 # 特性
 
 本配置使用 [dein](https://github.com/Shougo/dein.vim) 作为插件管理器。
