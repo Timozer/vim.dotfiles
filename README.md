@@ -99,6 +99,20 @@ install req for defx:
 pip3 install pynvim
 ```
 
+install gtags:
+```bash
+# download ctags
+wget https://phoenixnap.dl.sourceforge.net/project/ctags/ctags/5.8/ctags-5.8.tar.gz
+tar xvzf ctags-5.8.tar.gz
+cd ctags-5.8 && ./configure && make && sudo make install
+
+wget http://tamacom.com/global/global-6.6.4.tar.gz
+tar xf global-6.6.4.tar.gz
+cd global-6.6.4
+./configure --with-exuberant-ctags
+make && sudo make install
+```
+
 # 特性
 
 本配置使用 [dein](https://github.com/Shougo/dein.vim) 作为插件管理器。
